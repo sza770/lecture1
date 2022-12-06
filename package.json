@@ -8,5 +8,6 @@
     "run-program": "node index.js"
   },
   "author": "shneor amramy",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

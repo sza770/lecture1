@@ -1,14 +1,23 @@
-let x = 0;
-while (x < 100) {
-    console.log("x", x++)
-}
+import { writeFile, readFile } from 'node:fs';
+import { exit } from 'node:process';
 
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  
-  readline.question('Who are you?', name => {
-    console.log(`Hey there ${name}!`);
-    readline.close();
-  });
+const me = {
+    firstName : "shneor",
+    lastName: "amramy",
+    age: 34
+}
+writeFile("./me.json" , JSON.stringify(me), (err)=> {
+    if (err) {
+        console.log(err)
+        exit(1);
+    }
+    readFile("./me.json", (err, data) => {
+        if (err) {
+            console.error(err);
+            exit(2);
+        }
+        console.log("%s", data)
+    
+    })
+})
+    
