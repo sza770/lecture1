@@ -9,5 +9,8 @@
   },
   "author": "shneor amramy",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }
