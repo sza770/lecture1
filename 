@@ -1,0 +1,27 @@
+'chai tzomeach domem-game'
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch sza/lecture1
+# Your branch is up to date with 'origin/sza/lecture1'.
+#
+# Changes to be committed:
+#	modified:   index.js
+#	modified:   me.json
+#	new file:   node_modules/.package-lock.json
+#	new file:   node_modules/ansi-regex/index.js
+#	new file:   node_modules/ansi-regex/license
+#	new file:   node_modules/ansi-regex/package.json
+#	new file:   node_modules/ansi-regex/readme.md
+#	new file:   node_modules/prompt-sync/LICENSE
+#	new file:   node_modules/prompt-sync/README.md
+#	new file:   node_modules/prompt-sync/index.js
+#	new file:   node_modules/prompt-sync/package.json
+#	new file:   node_modules/prompt-sync/test.js
+#	new file:   node_modules/strip-ansi/index.d.ts
+#	new file:   node_modules/strip-ansi/index.js
+#	new file:   node_modules/strip-ansi/license
+#	new file:   node_modules/strip-ansi/package.json
+#	new file:   node_modules/strip-ansi/readme.md
+#	new file:   package-lock.json
+#	modified:   package.json

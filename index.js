@@ -4,60 +4,85 @@ import { writeFile, writeFileSync, readFile ,readFileSync } from 'node:fs';
 import { exit } from 'node:process';
 
 
-const round1 = {
-  id: "", 
-  letter : "",  
-  gimatria: "",
-  wordOfTwo: ""
-}
-
-let fileData;
-readFile("./me.json", (err, data) => {
-  if (err) {
-    console.error(err);
-    exit(2);
-  }
-  if (!data.game) {
-    round1.id = 1;
-  } else {
-    fileData = data
-    round1.id = data.game.id[-1] + 1;
-  }
-
-})
-
 function reverseString(str) {
-  return str.split("").reverse().join("")
+  let needToReverse = true;
+  if (needToReverse) {
+  return str.split("").reverse().join("");
+  } else {
+    return str;
+  }
 }
-
 
 const rl = readline.createInterface({ input, output });
 
-// const test = await rl.question(reverseString(': הכנס אות בעברית '));
 
-const letter_1 = await rl.question('enter your letter here ');
-round1.letter = letter_1;
-console.log(`your letter is: ${letter_1}`);
-
-
-
-let answer_2 ="" ;
-while (isNaN(answer_2)) {
-  let gimatria_2 = await rl.question('what is the gimatria of the letter?');
-  answer_2 = gimatria_2
+const round1 = {
+  name: "",
+  age: "פ",
+  userName: "",
+  id: "", 
+  letter : "",  
+  gimatria: "פ",
+  wordOfTwo: ""
 }
-round1.gimatria = answer_2;
-console.log(`your answer is: ${answer_2}`);
+
+// let fileData;
+
+// let data1 = readFileSync("./me.json")
+
+
+// readFile("./me.json", (err, data) => {
+//   if (err) {
+//     console.error(err);
+//     exit(2);
+//   }
+// })
+
+// if 
 
 
 
-let answer_3 = "";
-while (answer_3.length < 2 || answer_3[0] !== letter_1) {
-  let wordOfTwo_3 = await rl.question('enter a two letter word that starts with your letter: ');
-  answer_3 = wordOfTwo_3  
+
+const name_1 = await rl.question(reverseString('   מה שמך?    '));
+round1.name = name_1;
+console.log(reverseString(`שלום ${name_1}`) )
+
+
+
+while (isNaN(round1.age)) {
+  let gimatria_2 = await rl.question(reverseString('    בן כמה אתה?   '));
+  round1.age = gimatria_2
+  if (isNaN(round1.age)){
+    console.log(reverseString("הכנס מספר בלבד בבקשה.."))
+  } else {
+    round1.userName = round1.name + round1.age;
+    console.log(reverseString(`שם המשתמש שלך הוא:   ${round1.userName}`) );
+  }
 }
-round1.wordOfTwo = answer_3;
-console.log(`your answer is: ${answer_3}`);
+
+const letter = await rl.question(reverseString('   איזה אות אתה בוחר?   '));
+round1.letter = letter
+console.log(reverseString(`בחרת ${round1.letter}`))
+
+
+
+while (isNaN(round1.gimatria)) {
+  let gimatria_2 = await rl.question(reverseString('   מה הגימטריא של האות?   '));
+  round1.gimatria = gimatria_2;
+  if (isNaN(round1.gimatria)){
+    console.log(reverseString("הכנס מספר בלבד בבקשה.."))
+  } else {
+    console.log(round1.gimatria, reverseString(`בחרת ` ))
+  }
+}
+
+
+while (round1.wordOfTwo.length < 2 || round1.wordOfTwo[0] !== round1.letter) {
+  let wordOfTwo_3 = await rl.question(reverseString('   הכנס מילה בת שתי אותיות המתחילה באות שבחרת:    '));
+
+  round1.wordOfTwo = wordOfTwo_3  
+}
+console.log(reverseString(`התשובה שלך:  ${wordOfTwo_3}`));
 
 
 rl.close();
